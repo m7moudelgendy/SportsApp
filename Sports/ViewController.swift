@@ -32,6 +32,26 @@ class ViewController: UIViewController, UICollectionViewDelegate,UICollectionVie
         cell.setCell(photo: item.photo , title: item.title)
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.row{
+        case 0:
+            let table = self.storyboard?.instantiateViewController(withIdentifier: "FootballLeagueTable") as! FootballLeagueTable
+            self.navigationController?.pushViewController(table, animated: true)
+            print("football")
+            break
+        case 1:
+            print("basketball")
+            break
+        case 2:
+            print("cricket")
+            break
+        case 3:
+            print("tennis")
+            break
+        default:
+            break
+        }
+    }
     
   /*  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         <#code#>
