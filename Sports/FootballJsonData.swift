@@ -1,12 +1,11 @@
 //
-//  FootballLeagueData.swift
+//  FootballJsonData.swift
 //  Sports
 //
 //  Created by ElGendy on 16/02/2023.
 //
 
 import Foundation
-
 class results : Decodable{
     
     var league_key : Int?

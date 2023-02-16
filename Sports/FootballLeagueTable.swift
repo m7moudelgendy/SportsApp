@@ -9,29 +9,20 @@ import UIKit
 import Kingfisher
 
 class FootballLeagueTable: UITableViewController {
-
-    var legName : [String] = []
-    var legCountrey : [String] = []
+    
     var legArray = [results]()
-   // var legImage : [String] = []
-  //  var dict2 : Dictionary <String , Any> = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         fetchFootballData { footData in
-//            for i in 0..<footData!.result.count{
-//                print(footData!.result[0].league_name!)
-//                self.legName.append(footData!.result[i].league_name!)
-//                self.legCountrey.append(footData!.result[i].country_name!)
             DispatchQueue.main.async {
                 self.legArray = footData!.result
                 self.tableView.reloadData()
             }
             }
         }
-
 
     // MARK: - Table view data source
     
@@ -77,9 +68,7 @@ class FootballLeagueTable: UITableViewController {
             
             do {
                 guard let data = data else {return}
-//let footballData = try JSONSerialization.jsonObject(with: data) as! Dictionary <String , Any>
-//let arr = footballData["result"] as! [Dictionary <String , Any>]
-//complition(arr)
+                
                var footballData : FootballData?
                footballData = try JSONDecoder().decode(FootballData.self, from: data)
                 complition(footballData)
