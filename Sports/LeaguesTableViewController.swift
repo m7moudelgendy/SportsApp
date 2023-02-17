@@ -60,5 +60,11 @@ class LeaguesTableViewController: UITableViewController {
         return 80.0
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let splitView = self.storyboard?.instantiateViewController(withIdentifier: "splitViewController") as! splitViewController
+        
+        self.navigationController?.pushViewController(splitView, animated: true)
+    }
   
 }

@@ -162,6 +162,11 @@
                         <viewLayoutGuide key="safeArea" id="DaD-aC-rVl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="latestResView" destination="cXO-hZ-9oY" id="CYz-IM-BGw"/>
+                        <outlet property="teamsView" destination="Gnj-8Q-jHC" id="jhq-Pr-EzE"/>
+                        <outlet property="upComingView" destination="Tk7-mg-n22" id="jHR-Ig-KQu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gvk-fk-1gY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
