@@ -28,6 +28,14 @@ class splitViewController: UIViewController {
 extension splitViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        if collectionView == self.upComingView {
+            return CGSize(width: 280, height: 150)
+        } else if collectionView == self.latestResView{
+            return CGSize(width: 300, height: 150)
+        }else if collectionView == self.teamsView{
+            return CGSize(width: 150, height: 150)
+        }
         return CGSize(width: 280, height: 150)
     
     }
