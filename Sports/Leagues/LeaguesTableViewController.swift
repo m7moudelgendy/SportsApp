@@ -34,21 +34,16 @@ class LeaguesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.layer.borderColor = UIColor.brown.cgColor
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)as! LeagueTableViewCell
+        cell.layer.cornerRadius=15
+        cell.layer.borderColor = UIColor.systemYellow.cgColor
         cell.layer.borderWidth = 1
-        cell.textLabel?.adjustsFontSizeToFitWidth = true
-        cell.textLabel?.minimumScaleFactor = 0.1
-        cell.textLabel?.font.withSize(10.0)
-        cell.textLabel?.font = UIFont.systemFont(ofSize: 20.0)
-        cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 18.0)
         switch sportKey {
         case 0...2:
-            cell.textLabel?.text = recievedLeaguesArr[indexPath.row].league_name
-            cell.detailTextLabel?.text = recievedLeaguesArr[indexPath.row].country_name
-            break
+            cell.leagueNameLabel.text = recievedLeaguesArr[indexPath.row].league_name
+             break
         case 3:
-            cell.textLabel?.text = recievedLeaguesArr[indexPath.row].country_name
+            cell.leagueNameLabel.text = recievedLeaguesArr[indexPath.row].country_name
             break
         default:
             break
@@ -57,14 +52,14 @@ class LeaguesTableViewController: UITableViewController {
         return cell
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80.0
+        return 121.0
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let splitView = self.storyboard?.instantiateViewController(withIdentifier: "splitViewController") as! splitViewController
+        let eventsVC = self.storyboard?.instantiateViewController(withIdentifier: "EventsViewController") as! EventsViewController
         
-        self.navigationController?.pushViewController(splitView, animated: true)
+        self.navigationController?.pushViewController(eventsVC, animated: true)
     }
   
 }

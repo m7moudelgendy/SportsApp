@@ -8,6 +8,6 @@ target 'Sports' do
    pod 'Kingfisher'
    pod 'ReachabilitySwift'
    pod 'Alamofire'
-
+   pod 'SwiftyGif'
 
 end

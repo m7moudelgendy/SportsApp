@@ -16,10 +16,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegate,UICollectio
         sportsCollectionView.delegate=self
         sportsCollectionView.dataSource=self
         
-        arrSports.append(Sport(photo: UIImage(named: "sports")!, title: "Football"))
-        arrSports.append(Sport(photo: UIImage(named: "sports")!, title: "Basketball"))
-        arrSports.append(Sport(photo: UIImage(named: "sports")!, title: "Cricket"))
-        arrSports.append(Sport(photo: UIImage(named: "sports")!, title: "Tennis"))
+        arrSports.append(Sport(photo: UIImage(named: "footballer")!, title: "Football"))
+        arrSports.append(Sport(photo: UIImage(named: "basketimg")!, title: "BasketBall"))
+        arrSports.append(Sport(photo: UIImage(named: "cricketPlayer")!, title: "Cricket"))
+        arrSports.append(Sport(photo: UIImage(named: "tennisplayer")!, title: "Tennis"))
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -29,9 +29,16 @@ class HomeViewController: UIViewController, UICollectionViewDelegate,UICollectio
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SportsCell", for: indexPath) as! SportsCollectionViewCell
         let item =  arrSports[indexPath.row]
-        cell.layer.borderColor = UIColor.brown.cgColor
-        cell.layer.borderWidth = 1
-        cell.setCell(photo: item.photo , title: item.title)
+        //rounded cell , border & Shadow
+         cell.layer.borderColor = UIColor.systemYellow.cgColor
+         cell.layer.borderWidth = 1
+         cell.layer.cornerRadius = 12
+         cell.layer.masksToBounds = true
+         cell.layer.shadowOffset = CGSizeMake(6, 6)
+         cell.layer.shadowColor = UIColor.white.cgColor
+         cell.layer.shadowOpacity = 0.1
+         cell.layer.shadowRadius = 4
+         cell.setCell(photo: item.photo , title: item.title)
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
