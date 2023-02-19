@@ -1,13 +1,7 @@
-//
-//  splitViewController.swift
-//  Sports
-//
-//  Created by Hader on 17/2/23.
-//
-
+ 
 import UIKit
 
-class splitViewController: UIViewController {
+class EventsViewController: UIViewController {
 
     @IBOutlet weak var upComingView: UICollectionView!
     @IBOutlet weak var latestResView: UICollectionView!
@@ -25,7 +19,7 @@ class splitViewController: UIViewController {
 
 }
 
-extension splitViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+extension EventsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
@@ -75,6 +69,9 @@ extension splitViewController: UICollectionViewDelegate, UICollectionViewDataSou
                 latestCell.contentView.backgroundColor = UIColor.systemYellow.withAlphaComponent(0.3)
             }else {
                 latestCell.contentView.backgroundColor = UIColor.systemGray.withAlphaComponent(0.25)
+                
+                latestCell.team1LB.text = "Ay 7aga"
+                latestCell.team2LB.text = "Ay 7aga tani"
             }
             return latestCell
             

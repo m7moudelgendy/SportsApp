@@ -1,44 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aOZ-7w-vf3">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="EHf-IW-A2E">
+        <scene sceneID="bze-m1-vHl">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                <viewController id="aOZ-7w-vf3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HVf-2C-oei">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash" translatesAutoresizingMaskIntoConstraints="NO" id="8dE-s8-wsA">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWr-37-glS">
+                                <rect key="frame" x="174.33333333333337" y="397.33333333333331" width="155.66666666666663" height="57.333333333333314"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="rty App">
+                                        <attributes>
+                                            <color key="NSColor" red="0.49803921568627452" green="0.49803921568627452" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="48" name="Optima-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBo-Xj-Oi6">
+                                <rect key="frame" x="70" y="396" width="51" height="57.333333333333314"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Sp">
+                                        <attributes>
+                                            <color key="NSColor" red="0.49803921568627452" green="0.49803921568627452" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <font key="NSFont" size="48" name="Optima-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="soccerball" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ft4-tH-Pes">
+                                <rect key="frame" x="115" y="403" width="64" height="50"/>
+                                <color key="tintColor" red="0.93333333330000001" green="0.81960784310000001" blue="0.043137254899999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="1Qp-er-l8Z"/>
+                                    <constraint firstAttribute="height" constant="51.329999999999998" id="bG3-LL-r28"/>
+                                </constraints>
                             </imageView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="UT8-pD-zS4"/>
+                        <color key="backgroundColor" red="0.9882352941176471" green="0.9882352941176471" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="8dE-s8-wsA" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Jq3-n7-vM8"/>
-                            <constraint firstItem="8dE-s8-wsA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="TNY-1a-GQV"/>
-                            <constraint firstItem="8dE-s8-wsA" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ear-nd-7Lm"/>
-                            <constraint firstAttribute="bottom" secondItem="8dE-s8-wsA" secondAttribute="bottom" id="zFY-ed-LeN"/>
+                            <constraint firstItem="GBo-Xj-Oi6" firstAttribute="leading" secondItem="UT8-pD-zS4" secondAttribute="leading" constant="70" id="Btm-yr-mjj"/>
+                            <constraint firstItem="fWr-37-glS" firstAttribute="centerY" secondItem="HVf-2C-oei" secondAttribute="centerY" id="Gh1-Fl-Stb"/>
+                            <constraint firstItem="ft4-tH-Pes" firstAttribute="top" secondItem="UT8-pD-zS4" secondAttribute="top" constant="343" id="JcY-3E-hl3"/>
+                            <constraint firstItem="UT8-pD-zS4" firstAttribute="trailing" secondItem="ft4-tH-Pes" secondAttribute="trailing" constant="214" id="WO3-u2-APQ"/>
+                            <constraint firstItem="fWr-37-glS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="GBo-Xj-Oi6" secondAttribute="trailing" constant="8" symbolic="YES" id="X04-2d-Cm3"/>
+                            <constraint firstItem="UT8-pD-zS4" firstAttribute="trailing" secondItem="fWr-37-glS" secondAttribute="trailing" constant="63" id="gjz-Wk-d2l"/>
+                            <constraint firstItem="GBo-Xj-Oi6" firstAttribute="centerY" secondItem="HVf-2C-oei" secondAttribute="centerY" constant="-1.3300000000000001" id="lfJ-RZ-dHu"/>
+                            <constraint firstItem="ft4-tH-Pes" firstAttribute="centerX" secondItem="HVf-2C-oei" secondAttribute="centerX" constant="-49.5" id="yUG-QU-bUa"/>
+                            <constraint firstItem="ft4-tH-Pes" firstAttribute="bottom" secondItem="GBo-Xj-Oi6" secondAttribute="bottom" id="z7Z-to-aP3"/>
                         </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="azR-bQ-vTN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="52.671755725190835" y="374.64788732394368"/>
+            <point key="canvasLocation" x="-850" y="254"/>
         </scene>
     </scenes>
     <resources>
-        <image name="Splash" width="1125" height="2436"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="soccerball" catalog="system" width="128" height="123"/>
     </resources>
 </document>

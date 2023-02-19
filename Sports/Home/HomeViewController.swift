@@ -8,15 +8,7 @@
 import UIKit
 
 class HomeViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout{
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
     var urlObj = UrlData()
->>>>>>> hadeer
-=======
-    var urlObj = UrlData()
->>>>>>> hadeer
     @IBOutlet weak var sportsCollectionView: UICollectionView!
     var arrSports = [Sport]()
     override func viewDidLoad() {
@@ -24,10 +16,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegate,UICollectio
         sportsCollectionView.delegate=self
         sportsCollectionView.dataSource=self
         
-        arrSports.append(Sport(photo: UIImage(named: "sports")!, title: "Football"))
-        arrSports.append(Sport(photo: UIImage(named: "sports")!, title: "Basketball"))
-        arrSports.append(Sport(photo: UIImage(named: "sports")!, title: "Cricket"))
-        arrSports.append(Sport(photo: UIImage(named: "sports")!, title: "Tennis"))
+        arrSports.append(Sport(photo: UIImage(named: "footballer")!, title: "Football"))
+        arrSports.append(Sport(photo: UIImage(named: "basketimg")!, title: "BasketBall"))
+        arrSports.append(Sport(photo: UIImage(named: "cricketPlayer")!, title: "Cricket"))
+        arrSports.append(Sport(photo: UIImage(named: "tennisplayer")!, title: "Tennis"))
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -37,9 +29,16 @@ class HomeViewController: UIViewController, UICollectionViewDelegate,UICollectio
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SportsCell", for: indexPath) as! SportsCollectionViewCell
         let item =  arrSports[indexPath.row]
-        cell.layer.borderColor = UIColor.brown.cgColor
-        cell.layer.borderWidth = 1
-        cell.setCell(photo: item.photo , title: item.title)
+        //rounded cell , border & Shadow
+         cell.layer.borderColor = UIColor.systemYellow.cgColor
+         cell.layer.borderWidth = 1
+         cell.layer.cornerRadius = 12
+         cell.layer.masksToBounds = true
+         cell.layer.shadowOffset = CGSizeMake(6, 6)
+         cell.layer.shadowColor = UIColor.white.cgColor
+         cell.layer.shadowOpacity = 0.1
+         cell.layer.shadowRadius = 4
+         cell.setCell(photo: item.photo , title: item.title)
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -49,32 +48,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate,UICollectio
         case 0:
             LeagueTableVC.title = "Football League"
             print("Football League")
-<<<<<<< HEAD
-<<<<<<< HEAD
-            LeagueTableVC.apiUrl  = "https://apiv2.allsportsapi.com/football/?met=Leagues&APIkey=5cc60ab1321da1aae744e3e0781c99cb7b266ea9e4121466a66fa55bd4b85440"
- 
-             break
-        case 1:
-            LeagueTableVC.title = "BasketBall League"
-            LeagueTableVC.apiUrl   = "https://apiv2.allsportsapi.com/basketball/?met=Leagues&APIkey=5cc60ab1321da1aae744e3e0781c99cb7b266ea9e4121466a66fa55bd4b85440"
-            print("BasketBall League")
-            break
-        case 2:
-            LeagueTableVC.apiUrl   = "https://apiv2.allsportsapi.com/cricket/?met=Leagues&APIkey=5cc60ab1321da1aae744e3e0781c99cb7b266ea9e4121466a66fa55bd4b85440"
- 
-            LeagueTableVC.title = "Cricket League"
-            LeagueTableVC.apiUrl   = "https://apiv2.allsportsapi.com/cricket/?met=Leagues&APIkey=5cc60ab1321da1aae744e3e0781c99cb7b266ea9e4121466a66fa55bd4b85440"
- 
-            LeagueTableVC.title = "Cricket League"
-            print("Cricket League")
-              break
-        case 3:
-            LeagueTableVC.title = "Tennis League"
-             LeagueTableVC.apiUrl  = "https://apiv2.allsportsapi.com/tennis/?met=Leagues&APIkey=5cc60ab1321da1aae744e3e0781c99cb7b266ea9e4121466a66fa55bd4b85440"
-             print("Tennis League")
-=======
-=======
->>>>>>> hadeer
             LeagueTableVC.apiUrl  = urlObj.footballLeague
             LeagueTableVC.sportKey = 0
              break
@@ -96,10 +69,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate,UICollectio
             LeagueTableVC.apiUrl  = urlObj.tennisLeague
             print("Tennis League")
             LeagueTableVC.sportKey = 3
-<<<<<<< HEAD
->>>>>>> hadeer
-=======
->>>>>>> hadeer
             break
         default:
             break
@@ -112,15 +81,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate,UICollectio
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 179, height: 229)
-<<<<<<< HEAD
-<<<<<<< HEAD
-      //   let size = (collectionView.frame.size.width-10)/4
-=======
      //   let size = (collectionView.frame.size.width-10)/4
->>>>>>> hadeer
-=======
-     //   let size = (collectionView.frame.size.width-10)/4
->>>>>>> hadeer
       //     return CGSize(width: size, height: size)
     }
 
