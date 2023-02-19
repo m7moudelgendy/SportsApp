@@ -6,7 +6,12 @@ class LeaguesTableViewController: UITableViewController {
     
     var recievedLeaguesArr = [League]()
     var networkManagerObj = NetworkManager()
+<<<<<<< HEAD
     var  apiUrl :String = ""
+=======
+    var  apiUrl :String? = ""
+    var sportKey : Int = 0
+>>>>>>> hadeer
     override func viewDidLoad() {
         super.viewDidLoad()
         networkManagerObj.fetchData(compelition: { leagues in
@@ -14,9 +19,16 @@ class LeaguesTableViewController: UITableViewController {
             recievedLeaguesArr = leagues!.result
             // self.tableView.reloadData()
            // guard (leagues?.result) != nil else {return}
+<<<<<<< HEAD
              self.tableView.reloadData()
 
         }}, url: apiUrl)
+=======
+            print(sportKey)
+             self.tableView.reloadData()
+
+        }}, url: apiUrl!)
+>>>>>>> hadeer
         }
 
     // MARK: - Table view data source
@@ -35,18 +47,46 @@ class LeaguesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.layer.borderColor = UIColor.brown.cgColor
         cell.layer.borderWidth = 1
+<<<<<<< HEAD
         cell.textLabel?.text = recievedLeaguesArr[indexPath.row].league_name
         cell.detailTextLabel?.text = recievedLeaguesArr[indexPath.row].country_name
+        //cell.detailTextLabel?.text = "Egypt"
+=======
+>>>>>>> hadeer
         cell.textLabel?.adjustsFontSizeToFitWidth = true
         cell.textLabel?.minimumScaleFactor = 0.1
         cell.textLabel?.font.withSize(10.0)
         cell.textLabel?.font = UIFont.systemFont(ofSize: 20.0)
         cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 18.0)
+<<<<<<< HEAD
+=======
+        switch sportKey {
+        case 0...2:
+            cell.textLabel?.text = recievedLeaguesArr[indexPath.row].league_name
+            cell.detailTextLabel?.text = recievedLeaguesArr[indexPath.row].country_name
+            break
+        case 3:
+            cell.textLabel?.text = recievedLeaguesArr[indexPath.row].country_name
+            break
+        default:
+            break
+        }
+        
+>>>>>>> hadeer
         return cell
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80.0
     }
     
+<<<<<<< HEAD
+=======
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let splitView = self.storyboard?.instantiateViewController(withIdentifier: "splitViewController") as! splitViewController
+        
+        self.navigationController?.pushViewController(splitView, animated: true)
+    }
+>>>>>>> hadeer
   
 }

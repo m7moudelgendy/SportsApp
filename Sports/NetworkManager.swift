@@ -15,6 +15,16 @@ class NetworkManager
         let task=session.dataTask(with: request) { (data, response, error) in
             do
             {
+<<<<<<< HEAD
+                let resultData = try JSONDecoder().decode(Model.self, from: data!)
+                compelition(resultData) //c2
+                
+            }
+            catch
+            {
+                compelition(nil)
+                print(error.localizedDescription)
+=======
           let resultData = try JSONDecoder().decode(Model.self, from: data!)
          compelition(resultData) //c2
 
@@ -23,6 +33,7 @@ class NetworkManager
             {
             compelition(nil)
             print(error.localizedDescription)
+>>>>>>> hadeer
             }
         }
         task.resume()

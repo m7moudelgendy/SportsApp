@@ -8,7 +8,11 @@
 import UIKit
 
 class HomeViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout{
+<<<<<<< HEAD
 
+=======
+    var urlObj = UrlData()
+>>>>>>> hadeer
     @IBOutlet weak var sportsCollectionView: UICollectionView!
     var arrSports = [Sport]()
     override func viewDidLoad() {
@@ -41,6 +45,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate,UICollectio
         case 0:
             LeagueTableVC.title = "Football League"
             print("Football League")
+<<<<<<< HEAD
             LeagueTableVC.apiUrl  = "https://apiv2.allsportsapi.com/football/?met=Leagues&APIkey=5cc60ab1321da1aae744e3e0781c99cb7b266ea9e4121466a66fa55bd4b85440"
  
              break
@@ -62,6 +67,29 @@ class HomeViewController: UIViewController, UICollectionViewDelegate,UICollectio
             LeagueTableVC.title = "Tennis League"
              LeagueTableVC.apiUrl  = "https://apiv2.allsportsapi.com/tennis/?met=Leagues&APIkey=5cc60ab1321da1aae744e3e0781c99cb7b266ea9e4121466a66fa55bd4b85440"
              print("Tennis League")
+=======
+            LeagueTableVC.apiUrl  = urlObj.footballLeague
+            LeagueTableVC.sportKey = 0
+             break
+        case 1:
+            LeagueTableVC.title = "BasketBall League"
+            LeagueTableVC.apiUrl   = urlObj.basketLeague
+            print("BasketBall League")
+            LeagueTableVC.sportKey = 1
+            break
+        case 2:
+            LeagueTableVC.apiUrl   = urlObj.cricketLeague
+            LeagueTableVC.title = "Cricket League"
+            LeagueTableVC.apiUrl   = urlObj.cricketLeague
+            print("Cricket League")
+            LeagueTableVC.sportKey = 2
+              break
+        case 3:
+            LeagueTableVC.title = "Tennis League"
+            LeagueTableVC.apiUrl  = urlObj.tennisLeague
+            print("Tennis League")
+            LeagueTableVC.sportKey = 3
+>>>>>>> hadeer
             break
         default:
             break
@@ -74,7 +102,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegate,UICollectio
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 179, height: 229)
+<<<<<<< HEAD
+      //   let size = (collectionView.frame.size.width-10)/4
+=======
      //   let size = (collectionView.frame.size.width-10)/4
+>>>>>>> hadeer
       //     return CGSize(width: size, height: size)
     }
 
