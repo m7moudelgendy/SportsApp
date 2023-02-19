@@ -22,7 +22,10 @@ class Model : Decodable
    
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> hadeer
 
 class UrlData {
     let footballLeague = "https://apiv2.allsportsapi.com/football/?met=Leagues&APIkey=5cc60ab1321da1aae744e3e0781c99cb7b266ea9e4121466a66fa55bd4b85440"
@@ -32,4 +35,7 @@ class UrlData {
     
 
 }
+<<<<<<< HEAD
+>>>>>>> hadeer
+=======
 >>>>>>> hadeer

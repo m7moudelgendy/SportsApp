@@ -7,7 +7,12 @@ class LeaguesTableViewController: UITableViewController {
     var recievedLeaguesArr = [League]()
     var networkManagerObj = NetworkManager()
 <<<<<<< HEAD
+<<<<<<< HEAD
     var  apiUrl :String = ""
+=======
+    var  apiUrl :String? = ""
+    var sportKey : Int = 0
+>>>>>>> hadeer
 =======
     var  apiUrl :String? = ""
     var sportKey : Int = 0
@@ -20,14 +25,20 @@ class LeaguesTableViewController: UITableViewController {
             // self.tableView.reloadData()
            // guard (leagues?.result) != nil else {return}
 <<<<<<< HEAD
+<<<<<<< HEAD
              self.tableView.reloadData()
 
         }}, url: apiUrl)
 =======
+=======
+>>>>>>> hadeer
             print(sportKey)
              self.tableView.reloadData()
 
         }}, url: apiUrl!)
+<<<<<<< HEAD
+>>>>>>> hadeer
+=======
 >>>>>>> hadeer
         }
 
@@ -48,9 +59,12 @@ class LeaguesTableViewController: UITableViewController {
         cell.layer.borderColor = UIColor.brown.cgColor
         cell.layer.borderWidth = 1
 <<<<<<< HEAD
+<<<<<<< HEAD
         cell.textLabel?.text = recievedLeaguesArr[indexPath.row].league_name
         cell.detailTextLabel?.text = recievedLeaguesArr[indexPath.row].country_name
         //cell.detailTextLabel?.text = "Egypt"
+=======
+>>>>>>> hadeer
 =======
 >>>>>>> hadeer
         cell.textLabel?.adjustsFontSizeToFitWidth = true
@@ -59,7 +73,10 @@ class LeaguesTableViewController: UITableViewController {
         cell.textLabel?.font = UIFont.systemFont(ofSize: 20.0)
         cell.detailTextLabel?.font = UIFont.systemFont(ofSize: 18.0)
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> hadeer
         switch sportKey {
         case 0...2:
             cell.textLabel?.text = recievedLeaguesArr[indexPath.row].league_name
@@ -72,6 +89,9 @@ class LeaguesTableViewController: UITableViewController {
             break
         }
         
+<<<<<<< HEAD
+>>>>>>> hadeer
+=======
 >>>>>>> hadeer
         return cell
     }
@@ -80,13 +100,19 @@ class LeaguesTableViewController: UITableViewController {
     }
     
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> hadeer
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let splitView = self.storyboard?.instantiateViewController(withIdentifier: "splitViewController") as! splitViewController
         
         self.navigationController?.pushViewController(splitView, animated: true)
     }
+<<<<<<< HEAD
+>>>>>>> hadeer
+=======
 >>>>>>> hadeer
   
 }

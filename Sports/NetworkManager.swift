@@ -16,6 +16,7 @@ class NetworkManager
             do
             {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 let resultData = try JSONDecoder().decode(Model.self, from: data!)
                 compelition(resultData) //c2
                 
@@ -25,6 +26,8 @@ class NetworkManager
                 compelition(nil)
                 print(error.localizedDescription)
 =======
+=======
+>>>>>>> hadeer
           let resultData = try JSONDecoder().decode(Model.self, from: data!)
          compelition(resultData) //c2
 
@@ -33,6 +36,9 @@ class NetworkManager
             {
             compelition(nil)
             print(error.localizedDescription)
+<<<<<<< HEAD
+>>>>>>> hadeer
+=======
 >>>>>>> hadeer
             }
         }

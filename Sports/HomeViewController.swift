@@ -9,7 +9,11 @@ import UIKit
 
 class HomeViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout{
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+    var urlObj = UrlData()
+>>>>>>> hadeer
 =======
     var urlObj = UrlData()
 >>>>>>> hadeer
@@ -46,6 +50,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate,UICollectio
             LeagueTableVC.title = "Football League"
             print("Football League")
 <<<<<<< HEAD
+<<<<<<< HEAD
             LeagueTableVC.apiUrl  = "https://apiv2.allsportsapi.com/football/?met=Leagues&APIkey=5cc60ab1321da1aae744e3e0781c99cb7b266ea9e4121466a66fa55bd4b85440"
  
              break
@@ -68,6 +73,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate,UICollectio
              LeagueTableVC.apiUrl  = "https://apiv2.allsportsapi.com/tennis/?met=Leagues&APIkey=5cc60ab1321da1aae744e3e0781c99cb7b266ea9e4121466a66fa55bd4b85440"
              print("Tennis League")
 =======
+=======
+>>>>>>> hadeer
             LeagueTableVC.apiUrl  = urlObj.footballLeague
             LeagueTableVC.sportKey = 0
              break
@@ -89,6 +96,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate,UICollectio
             LeagueTableVC.apiUrl  = urlObj.tennisLeague
             print("Tennis League")
             LeagueTableVC.sportKey = 3
+<<<<<<< HEAD
+>>>>>>> hadeer
+=======
 >>>>>>> hadeer
             break
         default:
@@ -103,7 +113,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegate,UICollectio
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 179, height: 229)
 <<<<<<< HEAD
+<<<<<<< HEAD
       //   let size = (collectionView.frame.size.width-10)/4
+=======
+     //   let size = (collectionView.frame.size.width-10)/4
+>>>>>>> hadeer
 =======
      //   let size = (collectionView.frame.size.width-10)/4
 >>>>>>> hadeer

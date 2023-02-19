@@ -85,7 +85,10 @@
             <point key="canvasLocation" x="223.66412213740458" y="718.30985915492965"/>
         </scene>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> hadeer
         <!--Split View Controller-->
         <scene sceneID="DXd-zN-EbD">
             <objects>
@@ -342,6 +345,9 @@
             </objects>
             <point key="canvasLocation" x="701.52671755725191" y="1517.605633802817"/>
         </scene>
+<<<<<<< HEAD
+>>>>>>> hadeer
+=======
 >>>>>>> hadeer
         <!--Favorites-->
         <scene sceneID="EmO-BD-uPS">
@@ -371,7 +377,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z32-SF-eDu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <point key="canvasLocation" x="1249.6183206106871" y="717.6056338028169"/>
+=======
+            <point key="canvasLocation" x="3451" y="718"/>
+>>>>>>> hadeer
 =======
             <point key="canvasLocation" x="3451" y="718"/>
 >>>>>>> hadeer
@@ -386,6 +396,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
 <<<<<<< HEAD
+<<<<<<< HEAD
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="m4c-Vg-6To" detailTextLabel="h7v-mf-oa4" rowHeight="65" style="IBUITableViewCellStyleSubtitle" id="HAg-me-4Kc">
                                 <rect key="frame" x="0.0" y="50" width="393" height="65"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -396,6 +407,8 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="m4c-Vg-6To">
                                             <rect key="frame" x="20" y="17" width="25" height="14.333333333333334"/>
 =======
+=======
+>>>>>>> hadeer
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="m4c-Vg-6To" detailTextLabel="0x0-qs-I42" style="IBUITableViewCellStyleSubtitle" id="HAg-me-4Kc">
                                 <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -405,6 +418,9 @@
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="m4c-Vg-6To">
                                             <rect key="frame" x="20" y="6.0000000000000009" width="25" height="14.333333333333334"/>
+<<<<<<< HEAD
+>>>>>>> hadeer
+=======
 >>>>>>> hadeer
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
@@ -412,8 +428,13 @@
                                             <nil key="highlightedColor"/>
                                         </label>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h7v-mf-oa4">
                                             <rect key="frame" x="19.999999999999996" y="33.333333333333336" width="43.666666666666664" height="14.333333333333334"/>
+=======
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0x0-qs-I42">
+                                            <rect key="frame" x="19.999999999999996" y="22.333333333333336" width="43.666666666666664" height="14.333333333333334"/>
+>>>>>>> hadeer
 =======
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0x0-qs-I42">
                                             <rect key="frame" x="19.999999999999996" y="22.333333333333336" width="43.666666666666664" height="14.333333333333334"/>
@@ -436,7 +457,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LGx-L2-42Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <point key="canvasLocation" x="2457.2519083969464" y="716.90140845070425"/>
+=======
+            <point key="canvasLocation" x="1282" y="718"/>
+>>>>>>> hadeer
 =======
             <point key="canvasLocation" x="1282" y="718"/>
 >>>>>>> hadeer
@@ -460,7 +485,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U7p-cZ-ewH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
+=======
+            <point key="canvasLocation" x="1282" y="-231"/>
+>>>>>>> hadeer
 =======
             <point key="canvasLocation" x="1282" y="-231"/>
 >>>>>>> hadeer
@@ -496,12 +525,15 @@
     <resources>
         <image name="basketball.fill" catalog="system" width="128" height="123"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="soccerball.inverse" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
 =======
+=======
+>>>>>>> hadeer
         <image name="football" catalog="system" width="128" height="123"/>
         <image name="heart.fill" catalog="system" width="128" height="107"/>
         <image name="soccerball.inverse" catalog="system" width="128" height="123"/>
@@ -512,6 +544,9 @@
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
+<<<<<<< HEAD
+>>>>>>> hadeer
+=======
 >>>>>>> hadeer
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
