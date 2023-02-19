@@ -69,6 +69,9 @@ extension EventsViewController: UICollectionViewDelegate, UICollectionViewDataSo
                 latestCell.contentView.backgroundColor = UIColor.systemYellow.withAlphaComponent(0.3)
             }else {
                 latestCell.contentView.backgroundColor = UIColor.systemGray.withAlphaComponent(0.25)
+                
+                latestCell.team1LB.text = "Ay 7aga"
+                latestCell.team2LB.text = "Ay 7aga tani"
             }
             return latestCell
             
