@@ -58,8 +58,32 @@ class LeaguesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let eventsVC = self.storyboard?.instantiateViewController(withIdentifier: "EventsViewController") as! EventsViewController
+        switch sportKey{
+        case 0:
+            eventsVC.apiUrl = "https://apiv2.allsportsapi.com/football/?met=Fixtures&APIkey=5cc60ab1321da1aae744e3e0781c99cb7b266ea9e4121466a66fa55bd4b85440&from=2021-05-18&to=2021-05-18"
+            eventsVC.upcoming_Index = sportKey
+            print("Event View")
+            break
+        case 1:
+            eventsVC.apiUrl = "https://apiv2.allsportsapi.com/basketball/?met=Fixtures&APIkey=5cc60ab1321da1aae744e3e0781c99cb7b266ea9e4121466a66fa55bd4b85440&from=2021-05-18&to=2021-05-19"
+            eventsVC.upcoming_Index = sportKey
+            print("Event View")
+            break
+        case 2:
+            eventsVC.apiUrl = "https://apiv2.allsportsapi.com/cricket/?met=Fixtures&APIkey=5cc60ab1321da1aae744e3e0781c99cb7b266ea9e4121466a66fa55bd4b85440&from=2023-02-16&to=2023-02-19"
+            eventsVC.upcoming_Index = sportKey
+            print("Event View")
+            break
+        case 3:
+            eventsVC.apiUrl = "https://apiv2.allsportsapi.com/tennis/?met=Fixtures&APIkey=5cc60ab1321da1aae744e3e0781c99cb7b266ea9e4121466a66fa55bd4b85440&from=2020-06-3&to=2020-06-3"
+            eventsVC.upcoming_Index = sportKey
+            print("Event View")
+        default:
+            break
+        }
         
         self.navigationController?.pushViewController(eventsVC, animated: true)
     }
   
 }
+
