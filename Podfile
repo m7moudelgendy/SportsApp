@@ -9,5 +9,6 @@ target 'Sports' do
    pod 'ReachabilitySwift'
    pod 'Alamofire'
    pod 'SwiftyGif'
+   pod 'FaveButton'
 
 end

@@ -26,6 +26,10 @@ class FootballResults : Decodable{
     var away_team_logo : String?
     var event_time : String?
     var event_date : String?
+    var event_final_result : String?
+    var home_team_key : Int?
+    var away_team_key : Int?
+    
 }
 
 class BasketCricketData : Decodable{
@@ -42,6 +46,10 @@ class BasketCricketResults : Decodable{
     var event_away_team_logo : String?
     var event_time : String?
     var event_date : String?
+    var event_final_result : String?
+    var home_team_key : Int?
+    var away_team_key : Int?
+
 }
 
 class TennisData : Decodable{
@@ -58,5 +66,9 @@ class TennisResults : Decodable{
     var event_second_player_logo : String?
     var event_time : String?
     var event_date : String?
+    var event_final_result : String?
+    var home_team_key : Int?
+    var away_team_key : Int?
+
 }
 

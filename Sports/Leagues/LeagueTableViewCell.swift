@@ -5,6 +5,7 @@ class LeagueTableViewCell: UITableViewCell {
     
     @IBOutlet weak var leagueNameLabel: UILabel!
     
+    @IBOutlet weak var leagueLogo: UIImageView!
     
     
     override func awakeFromNib() {

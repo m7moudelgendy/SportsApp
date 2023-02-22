@@ -4,7 +4,8 @@ import Kingfisher
 
 class LeaguesTableViewController: UITableViewController {
     
-    var recievedLeaguesArr = [League]()
+   // var recievedLeaguesArr = [League]()
+    var recievedLeaguesArr :[League]  = []
     var networkManagerObj = NetworkManager()
     var  apiUrl :String? = ""
     var sportKey : Int = 0
@@ -41,9 +42,27 @@ class LeaguesTableViewController: UITableViewController {
         switch sportKey {
         case 0...2:
             cell.leagueNameLabel.text = recievedLeaguesArr[indexPath.row].league_name
+            let LeagueeLogoUrl = URL(string: recievedLeaguesArr[indexPath.row].league_logo ?? "imageNotfound")
+            if (LeagueeLogoUrl != nil)
+           {
+                cell.leagueLogo.kf.setImage(with: LeagueeLogoUrl, placeholder: UIImage(named: "3"), options: nil, progressBlock: nil, completionHandler: nil)
+            }
+           
+           else{
+               cell.leagueLogo.image = UIImage(named: "1")
+           }
              break
         case 3:
             cell.leagueNameLabel.text = recievedLeaguesArr[indexPath.row].country_name
+            let LeagueeLogoUrl = URL(string: recievedLeaguesArr[indexPath.row].league_logo ?? "imageNotfound")
+            if (LeagueeLogoUrl != nil)
+           {
+                cell.leagueLogo.kf.setImage(with: LeagueeLogoUrl, placeholder: UIImage(named: "3"), options: nil, progressBlock: nil, completionHandler: nil)
+            }
+           
+           else{
+               cell.leagueLogo.image = UIImage(named: "1")
+           }
             break
         default:
             break
