@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/mina/Desktop/FinalProject/SportsApp/Sports/SportsListItem+CoreDataClass.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/mina/Desktop/FinalProject/SportsApp/Sports/SportsListItem+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
       location = "group:Sports.xcodeproj">
    </FileRef>
    <FileRef
