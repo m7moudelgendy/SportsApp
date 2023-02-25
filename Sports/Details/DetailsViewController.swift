@@ -38,9 +38,15 @@ class DetailsViewController:UIViewController,UICollectionViewDelegate,UICollecti
         playersCollectionView.delegate = self
         playersCollectionView.dataSource = self
         getAllItems()
-        
+        //activity indicator 
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.color = .systemYellow
+        activityIndicator.center = view.center
+        activityIndicator.startAnimating()
+        view.addSubview(activityIndicator)
         networkManagerObj.fetchFootballTeamsData (complition: {teams in
             DispatchQueue.main.async { [self] in
+                activityIndicator.stopAnimating()
                 playersArr = teams!.result[0].players
                 guard (teams?.result) != nil else {return}
                 ///Core Data

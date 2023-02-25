@@ -12,9 +12,15 @@ class LeaguesTableViewController: UITableViewController {
     
      override func viewDidLoad() {
         super.viewDidLoad()
-     
+         //activity Indicator
+         let activityIndicator = UIActivityIndicatorView(style: .large)
+         activityIndicator.color = .systemYellow
+         activityIndicator.center = view.center
+         activityIndicator.startAnimating()
+         view.addSubview(activityIndicator)
              networkManagerObj.fetchData(compelition: { leagues in
                 DispatchQueue.main.async { [self] in
+                    activityIndicator.stopAnimating()
                     recievedLeaguesArr = leagues!.result
                     print(sportKey)
                     self.tableView.reloadData()
@@ -137,7 +143,7 @@ class LeaguesTableViewController: UITableViewController {
     }
     // check reachabilityChanged
     @objc func reachabilityChanged(note: Notification) {
-        let reachability = note.object as! Reachability
+        _ = note.object as! Reachability
  
     }
     

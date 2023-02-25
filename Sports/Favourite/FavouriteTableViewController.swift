@@ -10,13 +10,14 @@ class FavouriteTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getAllItems()
-        self.tableView.reloadData()
+            getAllItems()
+            self.tableView.reloadData()
     }
-
     override func viewWillAppear(_ animated: Bool) {
-        getAllItems()
-        self.tableView.reloadData()
+  
+             getAllItems()
+            self.tableView.reloadData()
+         
     }
     // MARK: - Table view data source
 
@@ -79,7 +80,7 @@ class FavouriteTableViewController: UITableViewController {
             let items = try context.fetch(SportsListItem.fetchRequest())
             models = items
             DispatchQueue.main.async {
-                self.tableView.reloadData()
+            self.tableView.reloadData()
             }
         }
         catch {

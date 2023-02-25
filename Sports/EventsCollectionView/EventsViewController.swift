@@ -27,10 +27,20 @@ class EventsViewController: UIViewController {
         latestResView.dataSource = self
         teamsView.delegate = self
         teamsView.dataSource = self
+        //activity Indicator
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.color = .systemYellow
+        activityIndicator.center = view.center
+        activityIndicator.startAnimating()
+        view.addSubview(activityIndicator)
         switch upcoming_Index{
         case 0:
+            
+            
             networkManagerObj.fetchFootballData(complition: { leagues in
+
                 DispatchQueue.main.async {
+                    activityIndicator.stopAnimating()
                     self.footballArr = leagues!.result
                     self.upComingView.reloadData()
                     self.latestResView.reloadData()
@@ -38,8 +48,12 @@ class EventsViewController: UIViewController {
                 }}, url: apiUrl)
             break
         case 1:
+            
+ 
             networkManagerObj.fetchBasketCricketData(complition: { leagues in
+ 
                 DispatchQueue.main.async {
+                    activityIndicator.stopAnimating()
                     self.basketCricketArr = leagues!.result
                     self.upComingView.reloadData()
                     self.latestResView.reloadData()
@@ -48,8 +62,11 @@ class EventsViewController: UIViewController {
             }, url: apiUrl)
             break
         case 2:
+ 
             networkManagerObj.fetchBasketCricketData(complition: { leagues in
+
                 DispatchQueue.main.async {
+                    activityIndicator.stopAnimating()
                     self.basketCricketArr = leagues!.result
                     self.upComingView.reloadData()
                     self.latestResView.reloadData()
@@ -58,8 +75,11 @@ class EventsViewController: UIViewController {
             }, url: apiUrl)
             break
         case 3:
+ 
             networkManagerObj.fetchTennisData(complition: { leagues in
+ 
                 DispatchQueue.main.async {
+                    activityIndicator.stopAnimating()
                     self.tennisArr = leagues!.result
                     self.upComingView.reloadData()
                     self.latestResView.reloadData()
@@ -71,7 +91,7 @@ class EventsViewController: UIViewController {
             break
         }
     }
-    
+ 
 }
 
 extension EventsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
@@ -79,7 +99,7 @@ extension EventsViewController: UICollectionViewDelegate, UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         if collectionView == self.upComingView {
-            return CGSize(width: 280, height: 150)
+            return CGSize(width: 310, height: 160)
         } else if collectionView == self.latestResView{
             return CGSize(width: 300, height: 150)
         }else{
@@ -372,60 +392,61 @@ extension EventsViewController: UICollectionViewDelegate, UICollectionViewDataSo
             {
                 
             case 0:
-             
+                
                 DetailsVC.sportKey = 0
-             
- 
-                    if indexPath.row % 2 == 0
-                    {
-                        
-                        DetailsVC.teamID = footballArr[indexPath.row].home_team_key ?? 1
-                        print("Football Home Details View")
-                        DetailsVC.favTeamName =  footballArr[indexPath.row].event_home_team ?? "nil"
-                        
-                    }
-                    else
-                    {
-                        DetailsVC.teamID = footballArr[indexPath.row].away_team_key ?? 1
-                        print("Football  Away Details View")
-                        DetailsVC.favTeamName =  footballArr[indexPath.row].event_away_team ?? "nil"
-                        
-                    }
-                    self.navigationController?.pushViewController(DetailsVC, animated: true)
-                 
- 
-               case 1 , 2 , 3 :
-                DetailsVC.sportKey = 1
- 
+                
+                
+                if indexPath.row % 2 == 0
+                {
                     
-                    if indexPath.row % 2 == 0
-                    {
-                        DetailsVC.teamID = basketCricketArr[indexPath.row].home_team_key ?? 1
-                        print("Football Home Details View")
-                        DetailsVC.favTeamName =  basketCricketArr[indexPath.row].event_home_team ?? "nil"
-                        DetailsVC.basketCricketTeamName =  basketCricketArr[indexPath.row].event_home_team ?? "nil"
-
-                        
-                    }
-                    else
-                    {
-                        DetailsVC.teamID = basketCricketArr[indexPath.row].away_team_key ?? 1
-                        print("Football  Away Details View")
-                        DetailsVC.favTeamName =  basketCricketArr[indexPath.row].event_away_team ?? "nil"
-                        DetailsVC.basketCricketTeamName =  basketCricketArr[indexPath.row].event_away_team ?? "nil"
-                    }
+                    DetailsVC.teamID = footballArr[indexPath.row].home_team_key ?? 1
+                    print("Football Home Details View")
+                    DetailsVC.favTeamName =  footballArr[indexPath.row].event_home_team ?? "nil"
                     
-                 self.navigationController?.pushViewController(DetailsVC, animated: true)
-                break
-
-                default:
-                    break
                 }
-                   
+                else
+                {
+                    DetailsVC.teamID = footballArr[indexPath.row].away_team_key ?? 1
+                    print("Football  Away Details View")
+                    DetailsVC.favTeamName =  footballArr[indexPath.row].event_away_team ?? "nil"
+                    
+                }
+                self.navigationController?.pushViewController(DetailsVC, animated: true)
+                
+                
+            case 1 , 2   :
+                DetailsVC.sportKey = 1
+                
+                
+                if indexPath.row % 2 == 0
+                {
+                    DetailsVC.teamID = basketCricketArr[indexPath.row].home_team_key ?? 1
+                    print("Football Home Details View")
+                    DetailsVC.favTeamName =  basketCricketArr[indexPath.row].event_home_team ?? "nil"
+                    DetailsVC.basketCricketTeamName =  basketCricketArr[indexPath.row].event_home_team ?? "nil"
+                    
+                    
+                }
+                else
+                {
+                    DetailsVC.teamID = basketCricketArr[indexPath.row].away_team_key ?? 1
+                    print("Football  Away Details View")
+                    DetailsVC.favTeamName =  basketCricketArr[indexPath.row].event_away_team ?? "nil"
+                    DetailsVC.basketCricketTeamName =  basketCricketArr[indexPath.row].event_away_team ?? "nil"
+                }
+ 
+                self.navigationController?.pushViewController(DetailsVC, animated: true)
+                break
+                
+                
+            default:
+                break
             }
-            
             
         }
         
+        
     }
  
+    
+}
