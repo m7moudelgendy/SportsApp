@@ -40,7 +40,7 @@ class FavouriteTableViewController: UITableViewController {
             cell.teamLogo.kf.setImage(with: TeamLogoUrl, placeholder: UIImage(named: "placeHolder"),options: [
                 .processor(processor),
                 .scaleFactor(UIScreen.main.scale),
-                .transition(.fade(6)),
+                .transition(.fade(2)),
                 .cacheOriginalImage
             ], progressBlock: nil, completionHandler: nil)
         }
@@ -100,7 +100,7 @@ class FavouriteTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
          headerView.backgroundColor = UIColor.clear
-         //headerView.frame = headerView.frame.inset(by: UIEdgeInsets(top: 10, left: 20, bottom: 6, right: 20))
+        
          return headerView
         
         

@@ -5,9 +5,6 @@
       location = "group:">
    </FileRef>
    <FileRef
-      location = "group:/Users/mina/Desktop/FinalProject/SportsApp/Sports/SportsListItem+CoreDataProperties.swift">
-   </FileRef>
-   <FileRef
       location = "group:Sports.xcodeproj">
    </FileRef>
    <FileRef

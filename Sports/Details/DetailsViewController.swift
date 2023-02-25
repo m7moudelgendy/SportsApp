@@ -1,8 +1,8 @@
-  
+
 import UIKit
 import CoreData
 import Kingfisher
- 
+
 class DetailsViewController:UIViewController,UICollectionViewDelegate,UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var playersCollectionView: UICollectionView!
@@ -14,79 +14,79 @@ class DetailsViewController:UIViewController,UICollectionViewDelegate,UICollecti
     var teamName = ""
     var teamImg = ""
     var models = [SportsListItem]()
-     var isFavFlag = false
+    var isFavFlag = false
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var sportKey : Int = 0
     var favTeamName :String = ""
     var basketCricketTeamName :String = ""
     var basketCricketTeamLogo :String = ""
-   
- //Favourite Function
+    
+    //Favourite Function
     @IBAction func favBtn(_ sender: UIButton) {
- 
+        
         self.createItem(name: self.teamName , isFav: isFavFlag , teamImg: self.teamImg)
-          sender.setImage(UIImage(systemName: "heart.fill"), for: .normal)
- 
-     }
+        sender.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+        
+    }
     @IBOutlet weak var toggleButton: UIButton!
     @IBOutlet weak var teamLogo: UIImageView!
     @IBOutlet weak var viewbackground: UIView!
     @IBOutlet weak var teamNameLabel: UILabel!
     
-     override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
-         playersCollectionView.delegate = self
-         playersCollectionView.dataSource = self
-         getAllItems()
-      
-         networkManagerObj.fetchFootballTeamsData (complition: {teams in
+        playersCollectionView.delegate = self
+        playersCollectionView.dataSource = self
+        getAllItems()
+        
+        networkManagerObj.fetchFootballTeamsData (complition: {teams in
             DispatchQueue.main.async { [self] in
                 playersArr = teams!.result[0].players
-                  guard (teams?.result) != nil else {return}
+                guard (teams?.result) != nil else {return}
                 ///Core Data
-                 self.teamName = teams?.result[0].team_name ?? ""
+                self.teamName = teams?.result[0].team_name ?? ""
                 self.teamImg = teams?.result[0].team_logo ?? ""
                 
                 
                 /// fetch team  name & logo
                 teamNameLabel.text = teams?.result[0].team_name
-                        let teamImgUrl = URL(string: teams?.result[0].team_logo ?? "imageNotfound")
+                let teamImgUrl = URL(string: teams?.result[0].team_logo ?? "imageNotfound")
                 
-                               if (teamImgUrl != nil)  {
-                                   teamLogo.kf.setImage(with: teamImgUrl, placeholder: UIImage(named: "placeHolder"), options: nil, progressBlock: nil, completionHandler: nil)
-                
-                               }
-                               else{
-                                   teamLogo.image = UIImage(named: "placeHolder")
-                               }
+                if (teamImgUrl != nil)  {
+                    teamLogo.kf.setImage(with: teamImgUrl, placeholder: UIImage(named: "placeHolder"), options: nil, progressBlock: nil, completionHandler: nil)
+                    
+                }
+                else{
+                    teamLogo.image = UIImage(named: "placeHolder")
+                }
                 self.playersCollectionView.reloadData()
-        
+                
             }
             
         } , teamKey: teamID)
-         ///make View Raduis
-         viewbackground.layer.cornerRadius = 60
-         self.tabBarController?.tabBar.isHidden = false
-     }
+        ///make View Raduis
+        viewbackground.layer.cornerRadius = 60
+        self.tabBarController?.tabBar.isHidden = false
+    }
     override func viewWillAppear(_ animated: Bool) {
         ///save sataus of favorite btn
         print(models.count ,"coreData")
         print(favTeamName , "coreData")
- 
+        
         for index in 0 ..< (models.count) {
             if favTeamName == models[index].name {
-               toggleButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
-               print(models[index].isFav)
-             toggleButton.reloadInputViews()
+                toggleButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                print(models[index].isFav)
+                toggleButton.reloadInputViews()
                 break
-                }
-             
-                  else {
-                     toggleButton.setImage(UIImage(systemName: "heart"), for: .normal)
-                    }
-                 }
-
-                
+            }
+            
+            else {
+                toggleButton.setImage(UIImage(systemName: "heart"), for: .normal)
+            }
+        }
+        
+        
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return playersArr.count}
@@ -115,7 +115,7 @@ class DetailsViewController:UIViewController,UICollectionViewDelegate,UICollecti
             playerCell.playeImage.kf.setImage(with: playerImageUrl, placeholder: UIImage(named: "playerplaceholder"),options: [
                 .processor(processor),
                 .scaleFactor(UIScreen.main.scale),
-                .transition(.fade(4)),
+                .transition(.fade(2)),
                 .cacheOriginalImage
             ], progressBlock: nil, completionHandler: nil)}
         else{
@@ -130,66 +130,31 @@ class DetailsViewController:UIViewController,UICollectionViewDelegate,UICollecti
     
     //core data
     func createItem(name: String , isFav : Bool, teamImg : String   ){
-   let newItem = SportsListItem(context: context)
-   newItem.name = name
-   newItem.isFav = true
-   newItem.teamImg = teamImg
-//   newItem.teamImg =
-   do {
-       try context.save()
-       getAllItems()
+        let newItem = SportsListItem(context: context)
+        newItem.name = name
+        newItem.isFav = true
+        newItem.teamImg = teamImg
+        //   newItem.teamImg =
+        do {
+            try context.save()
+            getAllItems()
+        }
+        catch {
+            
+        }
+        print("label")
     }
-   catch {
-       
-   }
-   print("label")
-}
-func getAllItems(){
-   do{
-       let items = try context.fetch(SportsListItem.fetchRequest())
-       models = items
-       /*DispatchQueue.main.async {
-           self.tableView.reloadData()
-       }*/
-       
-   }
-   catch {
-       
-   }
-}
+    func getAllItems(){
+        do{
+            let items = try context.fetch(SportsListItem.fetchRequest())
+            models = items
+            
+        }
+        catch {
+            
+        }
+    }
     
-/*func updateItem(item: SportsListItem , newName : String){
-   item.name = newName
-   do {
-       try context.save()
-       getAllItems()
-   }
-   catch {
-       
-   }
-}*/
-
-/*
-if toggleButtonChecked == false
-{
-toggleButtonChecked = true
-
-}
-else
-{
-toggleButtonChecked = false
-cutomizeButtonNotSelected()
-self.createItem(name: self.teamName)
-}
-var toggleButtonChecked = false
-
-func customizeButtonSelected(){
-toggleButton
-}
-func cutomizeButtonNotSelected(){
-toggleButton.setImage(UIImage(systemName: "heart"), for: .normal)
-}
-*/
 }
 
 

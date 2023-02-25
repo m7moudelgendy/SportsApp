@@ -16,8 +16,6 @@ class LeaguesTableViewController: UITableViewController {
              networkManagerObj.fetchData(compelition: { leagues in
                 DispatchQueue.main.async { [self] in
                     recievedLeaguesArr = leagues!.result
-                    // self.tableView.reloadData()
-                    // guard (leagues?.result) != nil else {return}
                     print(sportKey)
                     self.tableView.reloadData()
                     
@@ -72,7 +70,7 @@ class LeaguesTableViewController: UITableViewController {
                 cell.leagueLogo.kf.setImage(with: LeagueeLogoUrl, placeholder: UIImage(named: "placeHolder"),options: [
                     .processor(processor),
                     .scaleFactor(UIScreen.main.scale),
-                    .transition(.fade(6)),
+                    .transition(.fade(2)),
                     .cacheOriginalImage
                 ], progressBlock: nil, completionHandler: nil)
             }
@@ -89,7 +87,7 @@ class LeaguesTableViewController: UITableViewController {
                 cell.leagueLogo.kf.setImage(with: LeagueeLogoUrl, placeholder: UIImage(named: "placeHolder"), options: [
                     .processor(processor),
                     .scaleFactor(UIScreen.main.scale),
-                    .transition(.fade(6)),
+                    .transition(.fade(2)),
                     .cacheOriginalImage
                 ] , progressBlock: nil, completionHandler: nil)
             }

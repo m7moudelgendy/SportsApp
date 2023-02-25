@@ -34,13 +34,13 @@ class upComingCollectionViewCell: UICollectionViewCell {
             let url = URL(string: (Event.home_team_logo)!)
             team1Img.kf.setImage(with: url)
         }else{
-            team1Img.image = UIImage(named: "1")
+            team1Img.image = UIImage(named: "placeHolder")
         }
         if awayResult{
             let url = URL(string: (Event.away_team_logo)!)
             team2Img.kf.setImage(with: url)
         }else{
-            team2Img.image = UIImage(named: "1")
+            team2Img.image = UIImage(named: "placeHolder")
         }
         team1Img.kf.indicatorType = .activity
         team2Img.kf.indicatorType = .activity
@@ -60,13 +60,13 @@ class upComingCollectionViewCell: UICollectionViewCell {
             let url = URL(string: (BasketEvent.event_home_team_logo)!)
             team1Img.kf.setImage(with: url)
         }else{
-            team1Img.image = UIImage(named: "1")
+            team1Img.image = UIImage(named: "placeHolder")
         }
         if awayResult{
             let url = URL(string: (BasketEvent.event_away_team_logo)!)
             team2Img.kf.setImage(with: url)
         }else{
-            team2Img.image = UIImage(named: "1")
+            team2Img.image = UIImage(named: "placeHolder")
         }
         
     }
@@ -85,13 +85,13 @@ class upComingCollectionViewCell: UICollectionViewCell {
             let url = URL(string: (TennisEvent.event_first_player_logo)!)
             team1Img.kf.setImage(with: url)
         }else{
-            team1Img.image = UIImage(named: "1")
+            team1Img.image = UIImage(named: "placeHolder")
         }
         if awayResult{
             let url = URL(string: (TennisEvent.event_second_player_logo)!)
             team2Img.kf.setImage(with: url)
         }else{
-            team2Img.image = UIImage(named: "1")
+            team2Img.image = UIImage(named: "placeHolder")
         }
         
     }

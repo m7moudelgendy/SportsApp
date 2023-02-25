@@ -163,14 +163,14 @@ extension EventsViewController: UICollectionViewDelegate, UICollectionViewDataSo
                     latestCell.team1Img.kf.setImage(with: homeTeamImgUrl, placeholder: UIImage(named: "placeHolder"),options: [
                         .processor(processor),
                         .scaleFactor(UIScreen.main.scale),
-                        .transition(.fade(5)),
+                        .transition(.fade(2)),
                         .cacheOriginalImage
                     ], progressBlock: nil, completionHandler: nil)
                     
                     latestCell.team2Img.kf.setImage(with: awayTeamImgUrl, placeholder: UIImage(named: "placeHolder"),options: [
                         .processor(processor),
                         .scaleFactor(UIScreen.main.scale),
-                        .transition(.fade(5)),
+                        .transition(.fade(2)),
                         .cacheOriginalImage
                     ], progressBlock: nil, completionHandler: nil)
                     
@@ -191,14 +191,14 @@ extension EventsViewController: UICollectionViewDelegate, UICollectionViewDataSo
                     latestCell.team1Img.kf.setImage(with: homeTeamImgUrl, placeholder: UIImage(named: "placeHolder"),options: [
                         .processor(processor),
                         .scaleFactor(UIScreen.main.scale),
-                        .transition(.fade(5)),
+                        .transition(.fade(2)),
                         .cacheOriginalImage
                     ], progressBlock: nil, completionHandler: nil)
                     
                     latestCell.team2Img.kf.setImage(with: awayTeamImgUrl, placeholder: UIImage(named: "placeHolder"), options: [
                         .processor(processor),
                         .scaleFactor(UIScreen.main.scale),
-                        .transition(.fade(5)),
+                        .transition(.fade(2)),
                         .cacheOriginalImage
                     ], progressBlock: nil, completionHandler: nil)
                 }
@@ -217,13 +217,13 @@ extension EventsViewController: UICollectionViewDelegate, UICollectionViewDataSo
                     latestCell.team1Img.kf.setImage(with: firstPlayerImgUrl, placeholder: UIImage(named: "placeHolder"), options: [
                         .processor(processor),
                         .scaleFactor(UIScreen.main.scale),
-                        .transition(.fade(5)),
+                        .transition(.fade(2)),
                         .cacheOriginalImage
                     ], progressBlock: nil, completionHandler: nil)
                     latestCell.team2Img.kf.setImage(with: secPlayerImgUrl, placeholder: UIImage(named: "placeHolder"), options: [
                         .processor(processor),
                         .scaleFactor(UIScreen.main.scale),
-                        .transition(.fade(5)),
+                        .transition(.fade(2)),
                         .cacheOriginalImage
                     ], progressBlock: nil, completionHandler: nil)
                 }
@@ -255,7 +255,7 @@ extension EventsViewController: UICollectionViewDelegate, UICollectionViewDataSo
                         teamsCell.teamImg.kf.setImage(with: homeTeamImgUrl, placeholder: UIImage(named: "placeHolder"), options: [
                             .processor(processor),
                             .scaleFactor(UIScreen.main.scale),
-                            .transition(.fade(5)),
+                            .transition(.fade(2)),
                             .cacheOriginalImage
                         ], completionHandler: nil)
                     }
@@ -273,7 +273,7 @@ extension EventsViewController: UICollectionViewDelegate, UICollectionViewDataSo
                         teamsCell.teamImg.kf.setImage(with: homeTeamImgUrl, placeholder: UIImage(named: "placeHolder"), options: [
                             .processor(processor),
                             .scaleFactor(UIScreen.main.scale),
-                            .transition(.fade(5)),
+                            .transition(.fade(2)),
                             .cacheOriginalImage
                         ], progressBlock: nil, completionHandler: nil)
                     }
@@ -289,7 +289,7 @@ extension EventsViewController: UICollectionViewDelegate, UICollectionViewDataSo
                         teamsCell.teamImg.kf.setImage(with: firstPlayerImgUrl, placeholder: UIImage(named: "placeHolder"),options: [
                             .processor(processor),
                             .scaleFactor(UIScreen.main.scale),
-                            .transition(.fade(5)),
+                            .transition(.fade(2)),
                             .cacheOriginalImage
                         ], progressBlock: nil, completionHandler: nil)
                     }
@@ -312,7 +312,7 @@ extension EventsViewController: UICollectionViewDelegate, UICollectionViewDataSo
                         teamsCell.teamImg.kf.setImage(with: awayTeamImgUrl, placeholder: UIImage(named: "placeHolder"), options: [
                             .processor(processor),
                             .scaleFactor(UIScreen.main.scale),
-                            .transition(.fade(5)),
+                            .transition(.fade(2)),
                             .cacheOriginalImage
                         ], progressBlock: nil, completionHandler: nil)
                     }
@@ -328,7 +328,7 @@ extension EventsViewController: UICollectionViewDelegate, UICollectionViewDataSo
                         teamsCell.teamImg.kf.setImage(with: awayTeamImgUrl, placeholder: UIImage(named: "placeHolder"), options: [
                             .processor(processor),
                             .scaleFactor(UIScreen.main.scale),
-                            .transition(.fade(5)),
+                            .transition(.fade(2)),
                             .cacheOriginalImage
                         ], progressBlock: nil, completionHandler: nil)
                     }
@@ -344,7 +344,7 @@ extension EventsViewController: UICollectionViewDelegate, UICollectionViewDataSo
                         teamsCell.teamImg.kf.setImage(with: secPlayerImgUrl, placeholder: UIImage(named: "placeHolder"), options: [
                             .processor(processor),
                             .scaleFactor(UIScreen.main.scale),
-                            .transition(.fade(5)),
+                            .transition(.fade(2)),
                             .cacheOriginalImage
                         ], progressBlock: nil, completionHandler: nil)
                     }
@@ -367,7 +367,6 @@ extension EventsViewController: UICollectionViewDelegate, UICollectionViewDataSo
         if collectionView == self.teamsView
         {
             let DetailsVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
-            //       DetailsVC.apiUrl = urlObj.eventsFootballLeagueApiURL
             
             switch upcoming_Index
             {
@@ -395,7 +394,7 @@ extension EventsViewController: UICollectionViewDelegate, UICollectionViewDataSo
                     self.navigationController?.pushViewController(DetailsVC, animated: true)
                  
  
-               case 1 , 2 :
+               case 1 , 2 , 3 :
                 DetailsVC.sportKey = 1
  
                     
@@ -416,35 +415,13 @@ extension EventsViewController: UICollectionViewDelegate, UICollectionViewDataSo
                         DetailsVC.basketCricketTeamName =  basketCricketArr[indexPath.row].event_away_team ?? "nil"
                     }
                     
- 
-            //    DetailsVC.basketCricketTeamName = DetailsVC.teamNameLabel.
                  self.navigationController?.pushViewController(DetailsVC, animated: true)
                 break
 
-
-               
-                case 3 :
-                     
-                    break
-                    
                 default:
                     break
                 }
-                     //      case 1:
-                      //           DetailsVC.teamID = urlObj.EventsBasketballLeagueApiURL
-                //                DetailsVC.upcoming_Index = sportKey
-                //                print("Basket Details View")
-                //                break
-                //            case 2:
-                //                DetailsVC.teamID = urlObj.EventsCricketLeagueApiURL
-                //                DetailsVC.upcoming_Index = sportKey
-                //                print("Cricket Details View")
-                //                break
-                //            case 3:
-                //                DetailsVC.teamID = urlObj.EventsTennisLeagueApiURL
-                //                DetailsVC.upcoming_Index = sportKey
-                //                print("Tennis Details View")
-            
+                   
             }
             
             
