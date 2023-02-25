@@ -31,6 +31,7 @@ class Player : Decodable
     var  player_yellow_cards:String?
     var  player_red_cards:String?
     var  player_image:String?
+    var  player_type:String?
 
      
 }
@@ -61,6 +62,13 @@ class UrlData {
     let EventsBasketballLeagueApiURL = "https://apiv2.allsportsapi.com/basketball/?met=Fixtures&APIkey=5cc60ab1321da1aae744e3e0781c99cb7b266ea9e4121466a66fa55bd4b85440&from=2021-05-18&to=2021-05-19"
     let  EventsCricketLeagueApiURL = "https://apiv2.allsportsapi.com/cricket/?met=Fixtures&APIkey=5cc60ab1321da1aae744e3e0781c99cb7b266ea9e4121466a66fa55bd4b85440&from=2023-02-16&to=2023-02-19"
     let  EventsTennisLeagueApiURL = "https://apiv2.allsportsapi.com/tennis/?met=Fixtures&APIkey=5cc60ab1321da1aae744e3e0781c99cb7b266ea9e4121466a66fa55bd4b85440&from=2020-06-3&to=2020-06-3"
+    
+  //  let  FootballDetailsApiURL = "https://apiv2.allsportsapi.com/football/?&met=Teams&teamId=\(teamKey)&APIkey=5cc60ab1321da1aae744e3e0781c99cb7b266ea9e4121466a66fa55bd4b85440&from=2020-06-3&to=2020-06-3"
+    
+    
+
+    
+    
 //    init(TeamId: Int) {
 //        self.TeamId = TeamId+1
 //    }

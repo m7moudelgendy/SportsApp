@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import Reachability
 
 class HomeViewController: UIViewController, UICollectionViewDelegate,UICollectionViewDataSource ,UICollectionViewDelegateFlowLayout{
     var urlObj = UrlData()
     @IBOutlet weak var sportsCollectionView: UICollectionView!
     var arrSports = [Sport]()
+    let reachability = try! Reachability()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         sportsCollectionView.delegate=self
@@ -21,7 +24,20 @@ class HomeViewController: UIViewController, UICollectionViewDelegate,UICollectio
         arrSports.append(Sport(photo: UIImage(named: "cricketPlayer")!, title: "Cricket"))
         arrSports.append(Sport(photo: UIImage(named: "tennisplayer")!, title: "Tennis"))
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+           NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(note:)), name: .reachabilityChanged, object: reachability)
+           do {
+               try reachability.startNotifier()
+           } catch
+            {
+               print("Unable to start notifier")
+           }
+       }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        reachability.stopNotifier()
+        NotificationCenter.default.removeObserver(self, name: .reachabilityChanged, object: reachability)
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return arrSports.count
     }
@@ -44,7 +60,9 @@ class HomeViewController: UIViewController, UICollectionViewDelegate,UICollectio
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let LeagueTableVC = self.storyboard?.instantiateViewController(withIdentifier: "LeaguesTableViewController") as! LeaguesTableViewController
 
+      
         switch indexPath.row{
+          
         case 0:
             LeagueTableVC.title = "Football League"
             print("Football League")
@@ -73,18 +91,36 @@ class HomeViewController: UIViewController, UICollectionViewDelegate,UICollectio
         default:
             break
         }
+        
         LeagueTableVC.tableView.reloadData()
+        switch reachability.connection {
+            // INternet
+        case .wifi , .cellular:
+            self.navigationController?.pushViewController(LeagueTableVC, animated: true)
 
-        self.navigationController?.pushViewController(LeagueTableVC, animated: true)
-
+            print("Wifi  Or cellular Connection")
+ 
+           //UNAnvaliabe Internet
+        case .unavailable , .none:
+            let alert = UIAlertController(title:"No Internet !", message: "Make Sure Of Internet Connection", preferredStyle: .alert)
+            
+           alert.addAction(UIAlertAction(title: "Ok ", style: .default, handler: nil))
+            var imgTitle = UIImageView(frame: CGRect(x: 50, y: 14, width: 32, height: 32))
+            imgTitle.image = UIImage(named: "nointernet")
+            alert.view.addSubview(imgTitle)
+            self.present(alert, animated: true, completion: nil)
+            print(" unavailable No Connection")
+       }
     }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 179, height: 229)
-     //   let size = (collectionView.frame.size.width-10)/4
-      //     return CGSize(width: size, height: size)
+      }
+    // check reachabilityChanged
+    @objc func reachabilityChanged(note: Notification) {
+        let reachability = note.object as! Reachability
+ 
     }
-
+    
 }
 struct Sport{
     let photo : UIImage

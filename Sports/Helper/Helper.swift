@@ -13,15 +13,8 @@ class Helper
 }
     extension UIImageView {
         
-        func makeRounded() {
-            
-            layer.borderWidth = 1
-            layer.masksToBounds = false
-            layer.borderColor = UIColor.black.cgColor
-            layer.cornerRadius = self.frame.height / 2
-            clipsToBounds = true
-        }
-        
+  
+//        
 //        func makeViewforNoNetwork ()  {
 //            //tableView.backgroundColor = UIColor.white
 //            var image:UIImage?
@@ -29,7 +22,7 @@ class Helper
 //            var imageView = UIImageView(image: image)
 //            self.image = UIImage(named: "nointernet")!
 //            imageView.frame = CGRect(x: 140, y: 205, width: 100, height: 100)
-//           //  view.addSubview(imageView)
+//           //   view.addSubview(imageView)
 //         
 // 
 //            //var noDataLbl : UILabel?

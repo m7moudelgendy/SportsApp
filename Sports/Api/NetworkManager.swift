@@ -13,9 +13,11 @@ class NetworkManager
         let request = URLRequest(url: url )
         let session = URLSession(configuration: URLSessionConfiguration.default)
         let task=session.dataTask(with: request) { (data, response, error) in
+            guard let data = data else {return}
+
             do
             {
-          let resultData = try JSONDecoder().decode(Model.self, from: data!)
+          let resultData = try JSONDecoder().decode(Model.self, from: data)
          compelition(resultData) //c2
 
             }

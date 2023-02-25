@@ -22,7 +22,8 @@ class LeagueTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         //make space for cells
-        layer.frame = layer.frame.inset(by: UIEdgeInsets(top: 10, left: 20, bottom: 6, right: 20))
+        
+      layer.frame = layer.frame.inset(by: UIEdgeInsets(top: 10, left: 20, bottom: 6, right: 20))
         // multible line for leagues label
         leagueNameLabel.numberOfLines = 0
         leagueNameLabel.lineBreakMode = .byWordWrapping

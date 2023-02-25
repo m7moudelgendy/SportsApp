@@ -1,27 +1,49 @@
 
 import UIKit
 import Kingfisher
-
+import Reachability
 class LeaguesTableViewController: UITableViewController {
-    
-   // var recievedLeaguesArr = [League]()
-    var recievedLeaguesArr :[League]  = []
+    let reachability = try! Reachability()
+     var recievedLeaguesArr :[League]  = []
     var networkManagerObj = NetworkManager()
     var  apiUrl :String? = ""
     var sportKey : Int = 0
-    override func viewDidLoad() {
+    
+    
+     override func viewDidLoad() {
         super.viewDidLoad()
-        networkManagerObj.fetchData(compelition: { leagues in
-        DispatchQueue.main.async { [self] in
-            recievedLeaguesArr = leagues!.result
-            // self.tableView.reloadData()
-           // guard (leagues?.result) != nil else {return}
-            print(sportKey)
-             self.tableView.reloadData()
+     
+             networkManagerObj.fetchData(compelition: { leagues in
+                DispatchQueue.main.async { [self] in
+                    recievedLeaguesArr = leagues!.result
+                    // self.tableView.reloadData()
+                    // guard (leagues?.result) != nil else {return}
+                    print(sportKey)
+                    self.tableView.reloadData()
+                    
+                }}, url: apiUrl!)
+         self.tabBarController?.tabBar.isHidden = true
 
-        }}, url: apiUrl!)
-        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+           NotificationCenter.default.addObserver(self, selector: #selector(reachabilityChanged(note:)), name: .reachabilityChanged, object: reachability)
+           do {
+               try reachability.startNotifier()
+           } catch
+            {
+               print("Unable to start notifier")
+           }
+  
+        
 
+       }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        reachability.stopNotifier()
+        NotificationCenter.default.removeObserver(self, name: .reachabilityChanged, object: reachability)
+    }
+    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -35,6 +57,8 @@ class LeaguesTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let processor = RoundCornerImageProcessor(cornerRadius:0)
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)as! LeagueTableViewCell
         cell.layer.cornerRadius=15
         cell.layer.borderColor = UIColor.systemYellow.cgColor
@@ -45,11 +69,16 @@ class LeaguesTableViewController: UITableViewController {
             let LeagueeLogoUrl = URL(string: recievedLeaguesArr[indexPath.row].league_logo ?? "imageNotfound")
             if (LeagueeLogoUrl != nil)
            {
-                cell.leagueLogo.kf.setImage(with: LeagueeLogoUrl, placeholder: UIImage(named: "3"), options: nil, progressBlock: nil, completionHandler: nil)
+                cell.leagueLogo.kf.setImage(with: LeagueeLogoUrl, placeholder: UIImage(named: "placeHolder"),options: [
+                    .processor(processor),
+                    .scaleFactor(UIScreen.main.scale),
+                    .transition(.fade(6)),
+                    .cacheOriginalImage
+                ], progressBlock: nil, completionHandler: nil)
             }
            
            else{
-               cell.leagueLogo.image = UIImage(named: "1")
+               cell.leagueLogo.image = UIImage(named: "placeHolder")
            }
              break
         case 3:
@@ -57,11 +86,16 @@ class LeaguesTableViewController: UITableViewController {
             let LeagueeLogoUrl = URL(string: recievedLeaguesArr[indexPath.row].league_logo ?? "imageNotfound")
             if (LeagueeLogoUrl != nil)
            {
-                cell.leagueLogo.kf.setImage(with: LeagueeLogoUrl, placeholder: UIImage(named: "3"), options: nil, progressBlock: nil, completionHandler: nil)
+                cell.leagueLogo.kf.setImage(with: LeagueeLogoUrl, placeholder: UIImage(named: "placeHolder"), options: [
+                    .processor(processor),
+                    .scaleFactor(UIScreen.main.scale),
+                    .transition(.fade(6)),
+                    .cacheOriginalImage
+                ] , progressBlock: nil, completionHandler: nil)
             }
            
            else{
-               cell.leagueLogo.image = UIImage(named: "1")
+               cell.leagueLogo.image = UIImage(named: "placeHolder")
            }
             break
         default:
@@ -103,6 +137,26 @@ class LeaguesTableViewController: UITableViewController {
         
         self.navigationController?.pushViewController(eventsVC, animated: true)
     }
-  
+    // check reachabilityChanged
+    @objc func reachabilityChanged(note: Notification) {
+        let reachability = note.object as! Reachability
+ 
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+         headerView.backgroundColor = UIColor.clear
+       
+
+         return headerView
+        
+        
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 13
+    }
+   
 }
 

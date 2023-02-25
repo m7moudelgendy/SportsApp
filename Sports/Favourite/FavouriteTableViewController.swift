@@ -1,5 +1,6 @@
 
 import UIKit
+import Kingfisher
 
 class FavouriteTableViewController: UITableViewController {
     
@@ -10,10 +11,13 @@ class FavouriteTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getAllItems()
-       
-        
+        self.tableView.reloadData()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        getAllItems()
+        self.tableView.reloadData()
+    }
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -21,28 +25,55 @@ class FavouriteTableViewController: UITableViewController {
         return models.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)as! FavouriteTableViewCell
+
+        cell.layer.cornerRadius=15
+        cell.layer.borderColor = UIColor.systemYellow.cgColor
+        cell.layer.borderWidth = 1
         let model = models[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell" ,for: indexPath)
-        cell.textLabel?.text = model.name
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title: ""){
-            (action , view , completionHandler) in
-            self.models.remove(at: indexPath.row)
-            tableView.beginUpdates()
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-            tableView.endUpdates()
-            completionHandler(true)
+        
+        cell.teamName.text = model.name
+        let TeamLogoUrl = URL(string: models[indexPath.row].teamImg ?? "imageNotfound")
+        if (TeamLogoUrl != nil)
+       {
+            let processor = RoundCornerImageProcessor(cornerRadius:12)
+            cell.teamLogo.kf.setImage(with: TeamLogoUrl, placeholder: UIImage(named: "placeHolder"),options: [
+                .processor(processor),
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(6)),
+                .cacheOriginalImage
+            ], progressBlock: nil, completionHandler: nil)
         }
-        deleteAction.image = UIImage(systemName: "trash")
-        return UISwipeActionsConfiguration(actions: [deleteAction])
+       
+       else{
+           cell.teamLogo.image = UIImage(named: "placeHolder")
+       }
+        
+        
+         return cell
+    }
+ 
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let alert = UIAlertController(title:"Delete", message: "Are You Sure ?", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { [self] UIAlertAction in
+            
+            self.deleteItem(item:models[indexPath.row] )
+            self.tableView.reloadData()
+        }))
+        alert.addAction(UIAlertAction(title: "No", style: .default, handler: { [self] UIAlertAction in
+          dismiss(animated: true)
+        }))
+     
+        self.present(alert, animated: true, completion: nil)
+ 
+    
+
+    }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 121.0
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
-    }
     func getAllItems(){
         do{
             let items = try context.fetch(SportsListItem.fetchRequest())
@@ -60,61 +91,24 @@ class FavouriteTableViewController: UITableViewController {
         do {
             try context.save()
             getAllItems()
+
         }
         catch {
             
         }
     }
-    /*
-     let model = models[indexPath.row]
-     let cell = tableView.dequeueReusableCell(withIdentifier: "cell" ,for: indexPath)
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+         headerView.backgroundColor = UIColor.clear
+         //headerView.frame = headerView.frame.inset(by: UIEdgeInsets(top: 10, left: 20, bottom: 6, right: 20))
+         return headerView
+        
+        
+        
+    }
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10
+    }
      
-     cell.textLabel?.text = model.name
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
