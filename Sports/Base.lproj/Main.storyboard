@@ -57,7 +57,7 @@
                                                 <fragment content="Team Name">
                                                     <attributes>
                                                         <color key="NSColor" red="0.00297792496219762" green="0.00297792496219762" blue="0.00297792496219762" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <font key="NSFont" size="24" name="MarkerFelt-Thin"/>
+                                                        <font key="NSFont" size="19" name="Optima-Regular"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
@@ -65,19 +65,19 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeHolder" translatesAutoresizingMaskIntoConstraints="NO" id="pCm-al-geL">
-                                            <rect key="frame" x="12" y="14" width="114" height="95"/>
+                                            <rect key="frame" x="12" y="14" width="102" height="89"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="114" id="7mt-a6-sBW"/>
-                                                <constraint firstAttribute="height" constant="95" id="Iyp-Kv-nEx"/>
+                                                <constraint firstAttribute="width" constant="102" id="7mt-a6-sBW"/>
+                                                <constraint firstAttribute="height" constant="89" id="Iyp-Kv-nEx"/>
                                             </constraints>
                                         </imageView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="pCm-al-geL" firstAttribute="top" secondItem="0xa-HP-mth" secondAttribute="top" constant="14" id="03d-bs-hSb"/>
                                         <constraint firstItem="bHC-WA-Pku" firstAttribute="top" secondItem="0xa-HP-mth" secondAttribute="topMargin" constant="8" id="DzV-di-tLw"/>
-                                        <constraint firstItem="f9q-PM-Pf2" firstAttribute="leading" secondItem="pCm-al-geL" secondAttribute="trailing" constant="8" id="Fmi-Tw-GTO"/>
+                                        <constraint firstItem="f9q-PM-Pf2" firstAttribute="leading" secondItem="pCm-al-geL" secondAttribute="trailing" constant="20" id="Fmi-Tw-GTO"/>
                                         <constraint firstAttribute="bottom" secondItem="bHC-WA-Pku" secondAttribute="bottom" constant="23" id="KR4-El-0oz"/>
-                                        <constraint firstItem="f9q-PM-Pf2" firstAttribute="leading" secondItem="pCm-al-geL" secondAttribute="trailing" constant="8" id="rFN-kj-JSZ"/>
+                                        <constraint firstItem="f9q-PM-Pf2" firstAttribute="leading" secondItem="pCm-al-geL" secondAttribute="trailing" constant="20" id="rFN-kj-JSZ"/>
                                         <constraint firstItem="bHC-WA-Pku" firstAttribute="leading" secondItem="f9q-PM-Pf2" secondAttribute="trailing" constant="8" id="rhR-mX-tbx"/>
                                         <constraint firstAttribute="bottom" secondItem="f9q-PM-Pf2" secondAttribute="bottom" constant="6" id="swB-fm-Ynb"/>
                                         <constraint firstAttribute="trailing" secondItem="bHC-WA-Pku" secondAttribute="trailing" constant="32" id="ue4-uz-lBL"/>
@@ -307,10 +307,10 @@
                                             </constraints>
                                         </view>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeHolder" translatesAutoresizingMaskIntoConstraints="NO" id="y86-mL-qb1">
-                                            <rect key="frame" x="12" y="8" width="114" height="95"/>
+                                            <rect key="frame" x="12" y="14" width="102" height="89"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="95" id="eCU-wr-5jY"/>
-                                                <constraint firstAttribute="width" constant="114" id="ylb-3S-agy"/>
+                                                <constraint firstAttribute="height" constant="89" id="eCU-wr-5jY"/>
+                                                <constraint firstAttribute="width" constant="102" id="ylb-3S-agy"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAj-wp-DfS">
@@ -322,7 +322,7 @@
                                                 <fragment content="League Name">
                                                     <attributes>
                                                         <color key="NSColor" red="0.36742955988103698" green="0.36742955988103698" blue="0.36742955988103698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <font key="NSFont" size="24" name="MarkerFelt-Thin"/>
+                                                        <font key="NSFont" size="19" name="Optima-Regular"/>
                                                         <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                     </attributes>
                                                 </fragment>
@@ -334,12 +334,12 @@
                                         <constraint firstAttribute="bottom" secondItem="VAj-wp-DfS" secondAttribute="bottom" constant="23" id="1F7-pU-hn7"/>
                                         <constraint firstAttribute="trailing" secondItem="VAj-wp-DfS" secondAttribute="trailing" constant="32" id="D7Q-IC-nUM"/>
                                         <constraint firstItem="VAj-wp-DfS" firstAttribute="top" secondItem="Qwt-tD-XEN" secondAttribute="topMargin" constant="8" id="TKY-zm-946"/>
-                                        <constraint firstItem="wWf-g0-njz" firstAttribute="leading" secondItem="y86-mL-qb1" secondAttribute="trailing" constant="8" id="gok-uh-BLC"/>
-                                        <constraint firstItem="wWf-g0-njz" firstAttribute="leading" secondItem="y86-mL-qb1" secondAttribute="trailing" constant="8" id="h9U-6k-Zv6"/>
+                                        <constraint firstItem="wWf-g0-njz" firstAttribute="leading" secondItem="y86-mL-qb1" secondAttribute="trailing" constant="20" id="gok-uh-BLC"/>
+                                        <constraint firstItem="wWf-g0-njz" firstAttribute="leading" secondItem="y86-mL-qb1" secondAttribute="trailing" constant="20" id="h9U-6k-Zv6"/>
                                         <constraint firstAttribute="bottom" secondItem="wWf-g0-njz" secondAttribute="bottom" constant="6" id="i0g-M6-fEp"/>
                                         <constraint firstItem="y86-mL-qb1" firstAttribute="leading" secondItem="Qwt-tD-XEN" secondAttribute="leading" constant="12" id="pLj-uL-FEM"/>
                                         <constraint firstItem="VAj-wp-DfS" firstAttribute="leading" secondItem="wWf-g0-njz" secondAttribute="trailing" constant="8" id="uhP-Za-s9P"/>
-                                        <constraint firstItem="y86-mL-qb1" firstAttribute="top" secondItem="Qwt-tD-XEN" secondAttribute="top" constant="8" id="zNA-Y2-9Uj"/>
+                                        <constraint firstItem="y86-mL-qb1" firstAttribute="top" secondItem="Qwt-tD-XEN" secondAttribute="top" constant="14" id="zNA-Y2-9Uj"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -394,7 +394,7 @@
                                         <attributedString key="attributedText">
                                             <fragment content="Team Name">
                                                 <attributes>
-                                                    <font key="NSFont" size="26" name="Optima-Bold"/>
+                                                    <font key="NSFont" size="24" name="Optima-Bold"/>
                                                     <font key="NSOriginalFont" size="30" name="Optima-Bold"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
@@ -492,10 +492,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lanyardcard.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="6X8-Y6-rJN">
-                                                    <rect key="frame" x="116.66666666666667" y="220" width="17.000000000000014" height="31.333333333333343"/>
+                                                    <rect key="frame" x="116.66666666666666" y="220" width="21" height="39"/>
                                                     <color key="tintColor" systemColor="systemPinkColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="17" id="AWm-oR-cyj"/>
+                                                        <constraint firstAttribute="width" constant="21" id="AWm-oR-cyj"/>
                                                     </constraints>
                                                 </imageView>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lanyardcard.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="LMk-9t-5at">
@@ -567,7 +567,7 @@
                                                 <constraint firstItem="2PH-Oj-nki" firstAttribute="trailing" secondItem="xxF-8T-1zJ" secondAttribute="trailing" constant="-69" id="6gs-WL-BqX"/>
                                                 <constraint firstItem="Bls-Na-x7g" firstAttribute="leading" secondItem="X2U-7h-QnU" secondAttribute="leading" constant="-11" id="6s1-9d-Ax4"/>
                                                 <constraint firstAttribute="trailing" secondItem="mPJ-Zv-bHs" secondAttribute="trailing" constant="26.666666666666515" id="77A-N1-GKR"/>
-                                                <constraint firstItem="LMk-9t-5at" firstAttribute="centerX" secondItem="6X8-Y6-rJN" secondAttribute="centerX" constant="2.3333333333334849" id="7ln-8r-eQi"/>
+                                                <constraint firstItem="LMk-9t-5at" firstAttribute="centerX" secondItem="6X8-Y6-rJN" secondAttribute="centerX" constant="0.33333333333334281" id="7ln-8r-eQi"/>
                                                 <constraint firstAttribute="trailing" secondItem="gV6-B2-3xr" secondAttribute="trailing" constant="77" id="844-DX-bt6"/>
                                                 <constraint firstItem="pUv-Cg-Pjh" firstAttribute="centerX" secondItem="Bls-Na-x7g" secondAttribute="centerX" constant="1.5" id="8Rg-K2-IoT"/>
                                                 <constraint firstItem="NPo-5N-bml" firstAttribute="width" secondItem="gV6-B2-3xr" secondAttribute="width" multiplier="0.741935" id="8SM-aD-52S"/>
@@ -584,9 +584,9 @@
                                                 <constraint firstItem="y4k-Oz-7fy" firstAttribute="top" secondItem="1aH-9E-5nD" secondAttribute="bottom" constant="19" id="P4U-8S-GYl"/>
                                                 <constraint firstItem="LMk-9t-5at" firstAttribute="leading" secondItem="y4k-Oz-7fy" secondAttribute="trailing" constant="-0.3333333333332007" id="PAz-VK-JH4"/>
                                                 <constraint firstItem="xxF-8T-1zJ" firstAttribute="leading" secondItem="Bls-Na-x7g" secondAttribute="trailing" constant="4" id="PKa-qo-MNz"/>
-                                                <constraint firstItem="LMk-9t-5at" firstAttribute="top" secondItem="6X8-Y6-rJN" secondAttribute="bottom" constant="1.0000000000000568" id="Pgq-9I-1V1"/>
+                                                <constraint firstItem="LMk-9t-5at" firstAttribute="top" secondItem="6X8-Y6-rJN" secondAttribute="bottom" constant="-6.6666666666666572" id="Pgq-9I-1V1"/>
                                                 <constraint firstItem="Bls-Na-x7g" firstAttribute="height" secondItem="xxF-8T-1zJ" secondAttribute="height" multiplier="0.919003" id="QOH-mn-PQO"/>
-                                                <constraint firstItem="1aH-9E-5nD" firstAttribute="centerY" secondItem="6X8-Y6-rJN" secondAttribute="centerY" id="QdU-lJ-bDi"/>
+                                                <constraint firstItem="1aH-9E-5nD" firstAttribute="centerY" secondItem="6X8-Y6-rJN" secondAttribute="centerY" constant="-3.8333333333333144" id="QdU-lJ-bDi"/>
                                                 <constraint firstItem="gV6-B2-3xr" firstAttribute="leading" secondItem="NPo-5N-bml" secondAttribute="trailing" constant="7.3333333333333428" id="RK8-Gs-LcY"/>
                                                 <constraint firstAttribute="trailing" secondItem="xxF-8T-1zJ" secondAttribute="trailing" constant="8" id="RNS-ui-1wh"/>
                                                 <constraint firstItem="xxF-8T-1zJ" firstAttribute="height" secondItem="X2U-7h-QnU" secondAttribute="height" multiplier="0.310145" id="UWv-7F-0xI"/>
@@ -608,7 +608,7 @@
                                                 <constraint firstItem="6X8-Y6-rJN" firstAttribute="top" secondItem="AIp-ug-lq7" secondAttribute="bottom" constant="22.333333333333286" id="oOR-EG-ccL"/>
                                                 <constraint firstItem="xxF-8T-1zJ" firstAttribute="leading" secondItem="Bls-Na-x7g" secondAttribute="trailing" constant="4" id="otw-HX-4Ix"/>
                                                 <constraint firstItem="AIp-ug-lq7" firstAttribute="top" secondItem="mPJ-Zv-bHs" secondAttribute="bottom" constant="7.6666666666666856" id="sNw-tJ-aaH"/>
-                                                <constraint firstItem="hAp-Uj-RXE" firstAttribute="centerY" secondItem="6X8-Y6-rJN" secondAttribute="centerY" id="smf-48-q5V"/>
+                                                <constraint firstItem="hAp-Uj-RXE" firstAttribute="centerY" secondItem="6X8-Y6-rJN" secondAttribute="centerY" constant="-3.8333333333333144" id="smf-48-q5V"/>
                                                 <constraint firstItem="Bls-Na-x7g" firstAttribute="top" secondItem="X2U-7h-QnU" secondAttribute="top" constant="8" id="soI-ia-KCs"/>
                                                 <constraint firstItem="mPJ-Zv-bHs" firstAttribute="height" secondItem="X2U-7h-QnU" secondAttribute="height" multiplier="0.0937198" id="teV-2B-5YC"/>
                                                 <constraint firstItem="Bls-Na-x7g" firstAttribute="top" secondItem="X2U-7h-QnU" secondAttribute="top" constant="8" id="tw3-Re-ENr"/>
