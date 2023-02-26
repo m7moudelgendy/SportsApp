@@ -46,7 +46,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate,UICollectio
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SportsCell", for: indexPath) as! SportsCollectionViewCell
         let item =  arrSports[indexPath.row]
         //rounded cell , border & Shadow
-         cell.layer.borderColor = UIColor.systemYellow.cgColor
+         cell.layer.borderColor = UIColor.lightGray.cgColor
          cell.layer.borderWidth = 1
          cell.layer.cornerRadius = 12
          cell.layer.masksToBounds = true

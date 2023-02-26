@@ -65,7 +65,7 @@ class LeaguesTableViewController: UITableViewController {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)as! LeagueTableViewCell
         cell.layer.cornerRadius=15
-        cell.layer.borderColor = UIColor.systemYellow.cgColor
+        cell.layer.borderColor = UIColor.lightGray.cgColor
         cell.layer.borderWidth = 1
         switch sportKey {
         case 0...2:

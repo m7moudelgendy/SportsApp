@@ -29,7 +29,7 @@ class FavouriteTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)as! FavouriteTableViewCell
 
         cell.layer.cornerRadius=15
-        cell.layer.borderColor = UIColor.systemYellow.cgColor
+        cell.layer.borderColor = UIColor.lightGray.cgColor
         cell.layer.borderWidth = 1
         let model = models[indexPath.row]
         
